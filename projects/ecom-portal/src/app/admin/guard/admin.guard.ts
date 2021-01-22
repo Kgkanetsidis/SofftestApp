@@ -21,8 +21,8 @@ import { state } from '@angular/animations';
 export class AdminGuard
   implements CanActivate, CanActivateChild, CanDeactivate<unknown>, CanLoad {
 
-constructor (private encService: EncDecService,
-  private router: Router){}
+constructor(private encService: EncDecService,
+             private router: Router){}
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -34,7 +34,7 @@ constructor (private encService: EncDecService,
     | UrlTree {
     if (sessionStorage.getItem('role') != null) {
       const role = this.encService.decrypt(sessionStorage.getItem('role'), ' ');
-      if(role === 'Admin'){
+      if (role === 'Admin'){
         return true;
       }else{
         this.navigateToLogin(state);
@@ -43,7 +43,7 @@ constructor (private encService: EncDecService,
       this.navigateToLogin(state);
     }
 
-   
+
   }
   canActivateChild(
     childRoute: ActivatedRouteSnapshot,

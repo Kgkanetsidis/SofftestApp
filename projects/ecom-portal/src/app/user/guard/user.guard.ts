@@ -21,10 +21,10 @@ export class UserGuard
   implements CanActivate, CanActivateChild, CanDeactivate<unknown>, CanLoad {
 
 
-    
-constructor (private encService: EncDecService,
-  private router: Router){}
-  
+
+constructor(private encService: EncDecService,
+             private router: Router){}
+
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -38,7 +38,7 @@ constructor (private encService: EncDecService,
 
       if (sessionStorage.getItem('role') != null) {
         const role = this.encService.decrypt(sessionStorage.getItem('role'), ' ');
-        if(role === 'User'){
+        if (role === 'User'){
           return true;
         }else{
           this.navigateToLogin(state);
@@ -46,10 +46,10 @@ constructor (private encService: EncDecService,
       }else{
         this.navigateToLogin(state);
       }
-  
-     
 
-    return true;
+
+
+      return true;
   }
   canActivateChild(
     childRoute: ActivatedRouteSnapshot,

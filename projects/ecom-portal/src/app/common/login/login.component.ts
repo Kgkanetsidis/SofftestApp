@@ -42,10 +42,10 @@ export class LoginComponent implements OnInit {
   navigate(role: string) {
     switch (role) {
       case 'User':
-        //redirect to user
+        // redirect to user
         this.router.navigate(['/user/profile']);
       case 'Admin':
-        //redirect to Admin
+        // redirect to Admin
         this.router.navigate(['/admin/dashboard']);
       default:
         this.snackBar.open('User does not have a valid role', 'Login', {

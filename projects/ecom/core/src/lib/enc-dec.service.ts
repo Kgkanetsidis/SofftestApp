@@ -13,7 +13,7 @@ export class EncDecService {
 
   }
 
-  decrypt(value:string,key:string): string{
+  decrypt(value: string, key: string): string{
     const bytes = AES.decrypt(value, key);
     return bytes.toString(enc.Utf8);
   }
