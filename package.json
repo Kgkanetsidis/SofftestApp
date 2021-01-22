@@ -1,6 +1,9 @@
 {
   "name": "ecom-app",
   "version": "0.0.0",
+  "engines": {
+    "node": "15.x"
+  },
   "scripts": {
     "postinstall": "npm run build",
     "ng": "ng",
