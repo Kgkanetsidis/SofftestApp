@@ -12,7 +12,7 @@ import { IResponse } from '../../../common/service/loginResponse';
 export class ProfileService {
 
   constructor(private http: HttpClient,
-              @Inject(APP_CONFIG) private appConfig: IAppConfig) { }
+    @Inject(APP_CONFIG) private appConfig: IAppConfig) { }
 
   getProfile() {
     return this.http.get<IResponse>(this.appConfig.apiEndPoint + '/user');

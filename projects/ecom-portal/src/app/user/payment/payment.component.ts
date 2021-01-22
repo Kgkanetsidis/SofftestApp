@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import { PayPalConfig, PayPalEnvironment, PayPalIntegrationType } from 'ngx-paypal';
+import {IPayPalConfig,
+  ICreateOrderRequest  } from 'ngx-paypal';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { CartService } from '../cart/service/cart.service';
 import { UserOrderService } from '../order/service/user-order.service';
@@ -15,7 +16,7 @@ export class PaymentComponent implements OnInit {
   total: number;
   shippingAddress: FormGroup;
   displayedColumns: string[] = ['imageUrl', 'productName', 'quantity', 'price', 'total'];
-  // public payPalConfig?: PayPalConfig;
+  public payPalConfig?: IPayPalConfig;
   constructor(private cartService: CartService,
               private orderService: UserOrderService,
               private fb: FormBuilder,
@@ -36,8 +37,10 @@ export class PaymentComponent implements OnInit {
       );
     });
     // this.initConfig();
-    this.placeOrder(this.products);
+    // this.placeOrder(this.products);
   }
+
+  
 
   // private initConfig(): void {
   //   this.payPalConfig = new PayPalConfig(PayPalIntegrationType.ClientSideREST, PayPalEnvironment.Sandbox, {

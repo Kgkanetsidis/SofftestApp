@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-category-list',
@@ -7,12 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CategoryListComponent implements OnInit {
   displayedColumns = ['_id', 'categoryName', 'isLive'];
-
   @Input() categoryList: any;
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }

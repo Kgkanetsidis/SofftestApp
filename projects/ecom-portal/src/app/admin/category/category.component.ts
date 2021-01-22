@@ -1,7 +1,6 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { CategoryService } from '../../common/service/category.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-category',
@@ -12,14 +11,13 @@ export class CategoryComponent implements OnInit {
 
   catList: any;
   constructor(private categoryService: CategoryService,
-              private snackBar: MatSnackBar ) { }
+              private snackBar: MatSnackBar) { }
 
   ngOnInit() {
    this.loadCategories();
-
   }
 
-  loadCategories(){
+  loadCategories() {
     this.categoryService.getCategories().subscribe((result) => {
       if (result.status === 'success') {
         this.catList = result.data;
@@ -27,14 +25,14 @@ export class CategoryComponent implements OnInit {
     });
   }
 
-
   saveCategories(category: any) {
     this.categoryService.postCategories(category).subscribe((result) => {
       this.snackBar.open(result.message, 'Category', {
-        duration: 1000,
+        duration: 1000
       });
-      this.loadCategories;
-      });
+      this.loadCategories();
+    });
   }
+
 
 }

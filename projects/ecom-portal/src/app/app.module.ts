@@ -1,18 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomCommonModule } from './common/common.module';
 import { MaterialSharedModule } from './material-shared/material-shared.module';
-
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CustomInterceptorService } from './common/custom-interceptor/custom-interceptor.service';
 import { ErrorHandlerService } from './common/error-handler/error-handler.service';
 import { RoutingModule } from './routing/routing.module';
-
-
-
 
 @NgModule({
   declarations: [
@@ -24,11 +20,10 @@ import { RoutingModule } from './routing/routing.module';
     MaterialSharedModule,
     CustomCommonModule,
     RoutingModule
-
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: CustomInterceptorService, multi: true},
-   {provide: ErrorHandler, useClass: ErrorHandlerService}
+    { provide: HTTP_INTERCEPTORS, useClass: CustomInterceptorService, multi: true },
+    { provide: ErrorHandler, useClass: ErrorHandlerService }
   ],
   bootstrap: [AppComponent]
 })
