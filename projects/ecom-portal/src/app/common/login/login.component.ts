@@ -3,7 +3,7 @@ import { LoginService } from '../service/login.service';
 import { Router } from '@angular/router';
 import { IUser } from '../service/user';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { EncDecService } from '@ecom/core';
+import { EncDecService } from '@lips/common';
 
 @Component({
   selector: 'app-login',

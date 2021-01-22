@@ -11,7 +11,7 @@ import {
   UrlTree,
   Router,
 } from '@angular/router';
-import { EncDecService } from '@ecom/core';
+import { EncDecService } from '@lips/common';
 import { Observable } from 'rxjs';
 
 @Injectable({

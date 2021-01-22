@@ -2,7 +2,7 @@
     Complete Payment
   </h1>
   <h4>
-    Total : {{total | currency : 'INR'}}
+    Total : {{total | currency : 'EUR'}}
   </h4>
   
   <h4>
@@ -37,7 +37,7 @@
   
     <ng-container matColumnDef="total">
       <th mat-header-cell *matHeaderCellDef> Total </th>
-      <td mat-cell *matCellDef="let element"> {{element.price * element.quantity  | currency: 'INR'}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.price * element.quantity  | currency: 'EUR'}} </td>
     </ng-container>
   
   

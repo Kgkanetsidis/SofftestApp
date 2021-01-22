@@ -12,7 +12,7 @@ import {
   Router,
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import { EncDecService } from '@ecom/core';
+import { EncDecService } from '@lips/common';
 import { state } from '@angular/animations';
 
 @Injectable({
