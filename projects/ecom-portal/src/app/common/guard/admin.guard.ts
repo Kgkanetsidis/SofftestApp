@@ -1,51 +1,29 @@
 import { Injectable } from '@angular/core';
-import {
-  CanActivate,
-  CanActivateChild,
-  CanDeactivate,
-  CanLoad,
-  Route,
-  UrlSegment,
-  ActivatedRouteSnapshot,
-  RouterStateSnapshot,
-  UrlTree,
-  Router,
-} from '@angular/router';
+import { CanActivate, CanLoad, Route, Router, UrlSegment, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { EncDecService } from '@lips/common';
-import { state } from '@angular/animations';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class AdminGuard
-  implements  CanLoad {
+export class AdminGuard implements  CanLoad {
 
-constructor(private encService: EncDecService,
-            private router: Router){}
-
+  constructor(private encService: EncDecService,
+              private router: Router) { }
 
   canLoad(
     route: Route,
-    segments: UrlSegment[]
-  ):
-    | Observable<boolean | UrlTree>
-    | Promise<boolean | UrlTree>
-    | boolean
-    | UrlTree {
+    segments: UrlSegment[]): Observable<boolean> | Promise<boolean> | boolean {
       if (sessionStorage.getItem('role') != null) {
-        const role = this.encService.decrypt(sessionStorage.getItem('role'), ' ');
-        if (role === 'Admin'){
+        const role = this.encService.decrypt(sessionStorage.getItem('role'), '');
+        if (role === 'Admin') {
           return true;
-        }else{
+        } else {
           return false;
         }
-      }else{
+      } else {
         return false;
       }
   }
-
-
-
 
 }
