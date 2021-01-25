@@ -13,6 +13,7 @@ import { ProductListComponent } from './admin-product/product-list/product-list.
 import { AdminOrderComponent } from './admin-order/admin-order.component';
 import { AdminOrderListComponent } from './admin-order/admin-order-list/admin-order-list.component';
 import { OrderUpdateComponent } from './admin-order/order-update/order-update.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [DashboardComponent, CategoryComponent,
@@ -22,7 +23,8 @@ import { OrderUpdateComponent } from './admin-order/order-update/order-update.co
   imports: [
     CommonModule,
     AdminRoutingModule,
-    MaterialSharedModule
+    MaterialSharedModule,
+    DashboardModule
   ]
 })
 export class AdminModule { }
