@@ -11,6 +11,6 @@
     </mat-card-header>
     <img mat-card-image [routerLink]="[product._id]" [src]="product.imageUrl" [alt]="product.productName">
     <div>
-      {{product.price | currency : 'INR'}}
+      {{product.price | currency : 'EUR'}}
     </div>
 </mat-card>
