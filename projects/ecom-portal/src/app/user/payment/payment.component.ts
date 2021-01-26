@@ -37,7 +37,7 @@ export class PaymentComponent implements OnInit {
       );
     });
     // this.initConfig();
-    // this.placeOrder(this.products);
+    this.placeOrder();
   }
 
   
@@ -73,11 +73,12 @@ export class PaymentComponent implements OnInit {
   //   });
   // }
 
-  placeOrder(paymentData: any) {
+  // placeOrder(paymentData: any) {
+      placeOrder() {
     const order = {
       products: this.products,
       shippingAddress: this.shippingAddress.getRawValue(),
-      paymentInfo: paymentData,
+      // paymentInfo: paymentData,
       total: this.total
     };
     this.orderService.placeOrder(order).subscribe((result) => {

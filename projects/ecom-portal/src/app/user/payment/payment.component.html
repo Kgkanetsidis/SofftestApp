@@ -2,7 +2,7 @@
   Complete Payment
 </h1>
 <h4>
-  Total : {{total | currency : 'INR'}}
+  Total : {{total | currency : 'EUR'}}
 </h4>
 
 <h4>
@@ -65,7 +65,8 @@
   <div>
     <button mat-raised-button color="primary" routerLink="/user/cart">Back</button>
    <div *ngIf="shippingAddress.valid">
-      <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+    <button mat-raised-button color="primary" (click)="placeOrder()">Complete</button>
+      <!-- <ngx-paypal [config]="payPalConfig"></ngx-paypal> -->
    </div>
   </div>
 </form>
