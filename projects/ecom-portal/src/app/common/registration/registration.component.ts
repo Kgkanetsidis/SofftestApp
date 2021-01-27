@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 import { RegistrationService } from '../service/registration.service';
 import { CustomValidator } from '../custom-validator/custom.validator';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -14,7 +15,8 @@ export class RegistrationComponent implements OnInit {
   registrationForm: FormGroup;
   constructor(private fb: FormBuilder,
               private snackBar: MatSnackBar,
-              private registrationService: RegistrationService) { }
+              private registrationService: RegistrationService,
+              private router: Router,) { }
 
   ngOnInit() {
     this.registrationForm = this.fb.group({
