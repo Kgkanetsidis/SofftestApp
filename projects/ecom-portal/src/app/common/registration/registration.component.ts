@@ -34,6 +34,7 @@ export class RegistrationComponent implements OnInit {
         this.snackBar.open('User registration successful, please login to access your account!', 'Registration', {
           duration: 1000
         });
+        this.router.navigate(['/login']);
       }
     });
   }

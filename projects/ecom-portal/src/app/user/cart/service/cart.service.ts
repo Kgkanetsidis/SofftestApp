@@ -31,4 +31,9 @@ export class CartService {
   getProductForCheckOut() {
     return this.products.asObservable();
   }
+
+  removeProduct(product: any){
+    return this.http.delete<IResponse>(this.appConfig.apiEndPoint + '/cart', product);
+  }
+
 }

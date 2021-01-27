@@ -3,6 +3,7 @@ import { CartService } from './service/cart.service';
 import { MatTable } from '@angular/material/table';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -32,4 +33,10 @@ export class CartComponent implements OnInit {
     this.cartService.addProductForCheckOut(this.userCart);
     this.router.navigate(['/user/payment']);
   }
+
+  delete(){
+   
+    
+  }
+
 }
