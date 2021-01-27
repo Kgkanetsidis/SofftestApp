@@ -17,7 +17,7 @@
           *ngIf="isHandset$ | async">
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
-        <span class="titleWidth">EcomPortal</span>
+        <span class="titleWidth">Test Shop</span>
         <div>
             <button *ngIf="(role$ | async ) === 'User'" type="button" mat-icon-button routerLink="/user/cart">
               <mat-icon [matBadge]="(cart$ | async)?.data?.length" >shopping_cart</mat-icon>
