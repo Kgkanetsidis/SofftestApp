@@ -65,7 +65,7 @@
   <div>
     <button mat-raised-button color="primary" routerLink="/user/cart">Back</button>
    <div *ngIf="shippingAddress.valid">
-    <button mat-raised-button color="primary" (click)="placeOrder()">Complete</button>
+    <button mat-raised-button color="warn" (click)="placeOrder()">Complete</button>
       <!-- <ngx-paypal [config]="payPalConfig"></ngx-paypal> -->
    </div>
   </div>
